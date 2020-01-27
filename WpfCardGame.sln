@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCardGame", "WpfCardGame\WpfCardGame.csproj", "{51AC0FF7-7889-4E71-9C2C-DC84A82E9E34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE58C221-3B14-47C2-8114-667FDA7B1268}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJackUnitTests", "BlackJackUnitTests\BlackJackUnitTests.csproj", "{39C100B1-25A1-4C95-8951-08306A5F4BB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51AC0FF7-7889-4E71-9C2C-DC84A82E9E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AC0FF7-7889-4E71-9C2C-DC84A82E9E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AC0FF7-7889-4E71-9C2C-DC84A82E9E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AC0FF7-7889-4E71-9C2C-DC84A82E9E34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C100B1-25A1-4C95-8951-08306A5F4BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C100B1-25A1-4C95-8951-08306A5F4BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C100B1-25A1-4C95-8951-08306A5F4BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C100B1-25A1-4C95-8951-08306A5F4BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

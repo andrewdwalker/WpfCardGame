@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfCardGame.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel Orientation="Horizontal">
+                <Label 
+      Content="Player Cards" 
+      HorizontalAlignment="Right" />
+                <Label 
+      Content="Dealer Cards" 
+      HorizontalAlignment="Right" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ListView x:Name="playerCards"   ItemsSource="{Binding PlayerCards}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn 
+            Header="Rank" 
+            DisplayMemberBinding="{Binding Rank}" 
+            />
+                        <GridViewColumn 
+            Header="Suit" 
+            DisplayMemberBinding="{Binding Suit}" 
+            />
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+                <ListView x:Name="dealerCards"   ItemsSource="{Binding DealerCards}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn 
+            Header="Rank" 
+            DisplayMemberBinding="{Binding Rank}" 
+            />
+                            <GridViewColumn 
+            Header="Suit" 
+            DisplayMemberBinding="{Binding Suit}" 
+            />
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+            <Button Command="{Binding Path=StartCommand}" HorizontalAlignment="Left"
+      Content="_StartGame"></Button>
+            <Button Command="{Binding Path=DrawCardCommand}" HorizontalAlignment="Left"
+      Content="_DrawCard" IsEnabled="{Binding Path=GameInProgress, UpdateSourceTrigger=PropertyChanged}"></Button>
+            <Button Command="{Binding Path=StandCommand}" HorizontalAlignment="Left"
+      Content="_Stand" IsEnabled="{Binding Path=GameInProgress, UpdateSourceTrigger=PropertyChanged}"></Button>
+
+            <StackPanel Orientation="Horizontal">
+                <Label 
+      Content="Dealer Score:" 
+      HorizontalAlignment="Right"
+      Target="{Binding ElementName=dealerScoreTxt}"
+      />
+                <TextBox 
+      x:Name="dealerScoreTxt"
+      Text="{Binding Path=DealerScore,  Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+      Validation.ErrorTemplate="{x:Null}"
+      />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label 
+      Content="Player Score:" 
+      HorizontalAlignment="Right"
+      Target="{Binding ElementName=playerScoreTxt}"
+      />
+                <TextBox 
+      x:Name="playerScoreTxt"
+      Text="{Binding Path=PlayerScore, Mode=OneWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+      Validation.ErrorTemplate="{x:Null}"
+      />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

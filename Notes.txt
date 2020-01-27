@@ -1,0 +1,57 @@
+--
+
+1.  Add a way to shuffle deck.  We seem to be getting exteme non-randomness
+-Done.  My randomness wasn't working because I was drawing cards so close together (in time) and therefore same random 
+seed was being used. 
+2.  Copy the way the ListView is organized from Josh Example.  Make Dealer vs. Player look better
+Done
+3.  More game logic?  Dealer wins ties.  Game over if dealer has blackjack
+4.  Put in Card images. Done
+5.  Put in code to keep image of one dealer card hidden.
+
+--
+
+1.  I want the lists to be horizontal. Done
+2.  I want to see a flashing sign that says
+    a) Player busts Done
+	b) Dealer busts Done
+	c) Dealer blackjack
+	d) Player wins
+	e) Dealer wins
+
+3.  Multiple players? In progress...
+See: http://stackoverflow.com/questions/6003026/binding-hierarchical-object-data-to-listbox
+http://stackoverflow.com/questions/2679466/displaying-multidimensional-data-in-wpf
+*3.5 Rachael Liam's project shows how to pass a parameter from Command w/ ICommand.
+
+4. Done Try to clean up XAML.  Put styles at top of file and reuse.  For example, the flashing label. 
+    Try to make label more in your face.
+
+5.  Rules
+    a)  The dealer's hand receives its first card face up, and in "hole card" games receives its second card face down immediately (the hole card), which the dealer peeks at but does not reveal unless it makes the dealer's hand a blackjack. 
+	b)   In the case of a tied score, known as "push" or "standoff", bets are normally returned without adjustment; however, a blackjack beats any hand which is not a blackjack, even with value 21. Blackjack vs. blackjack is a push. Wins are paid out at 1:1, or equal to the wager, except for winning blackjacks, which are traditionally paid at 3:2 (meaning the player receives three dollars for every two bet), or one and a half times the wager. Many casinos today pay blackjacks at less than 3:2 at some tables.[4]
+Blackjack games almost always provide a side bet called insurance, which may be played when dealer's upcard is an ace. At least one further side bet is usually provided
+
+--
+
+1. The binding has become complicated.  Start with simple view that just deals cards to all players. 
+Done! a. Don't show pictures.
+Skipped! b. Just Suit and rank.  
+Done! c.  Then show pictures.
+Done!d. Then put in logic to draw cards.  Recall that all hands other than the one you are working on must not be allowed to draw card.
+
+Done 2.  Perhaps make dealer just a player with id of 0.  But recall he can't split!
+
+4/13/13
+
+TODO
+Done0.  Labels to say who won!
+-- Label for each player saying Busted, Won, Lost, Pushed
+Done1.  "Busted" label on dealer seems wrong.  Might just be size of label
+Done2.  Allow, something other than two players. Perhaps use menus
+Need more3.  Unit Tests.
+Done!4.  Comment code to give credit to Josh Smith and Rachel Liam.
+On Hold for now5.  Double down option?
+Done6.  Make one dealer card down, AND hide dealer score in beginning UNLESS, we have an option to show card up and dealer score
+Done7.  Some other (simpler) ViewModels...
+8.  Review Code

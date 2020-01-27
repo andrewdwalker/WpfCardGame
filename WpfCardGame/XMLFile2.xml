@@ -1,0 +1,34 @@
+﻿<Grid Margin="4">
+  <Grid.RowDefinitions>
+    <RowDefinition Height="Auto" />
+    <RowDefinition />
+    <RowDefinition />
+  </Grid.RowDefinitions>
+  <!-- CUSTOMERS -->
+  <DockPanel Grid.Row="0">
+    <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Customers" />
+    <ComboBox IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Path=.}" />
+  </DockPanel>
+  <!-- ORDERS -->
+  <DockPanel Grid.Row="1">
+    <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Orders" />
+    <ListBox IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Path=CurrentItem.Orders}" />
+  </DockPanel>
+  <!-- ORDER DETAILS -->
+  <DockPanel Grid.Row="2">
+    <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Order Details" />
+    <ItemsControl ItemsSource="{Binding Path=CurrentItem.Orders.CurrentItem. OrderDetails}" >
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <TextBlock>
+            <Run>Product:</Run>
+            <TextBlock Text="{Binding Path=Product}" />
+            <Run>(</Run>
+            <TextBlock Text="{Binding Path=Quantity}" />
+            <Run>)</Run>
+          </TextBlock>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </DockPanel>
+</Grid>

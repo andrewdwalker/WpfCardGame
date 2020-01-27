@@ -1,0 +1,46 @@
+﻿<Grid DataContext= "{Binding Source={StaticResource xmlData}, XPath=customers/customer}" Margin="4" >
+  <Grid.RowDefinitions>
+    <RowDefinition Height="Auto" />
+    <RowDefinition />
+    <RowDefinition />
+  </Grid.RowDefinitions>
+  <!-- CUSTOMERS -->
+  <DockPanel Grid.Row="0">
+    <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Customers" />
+    <ComboBox IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" >
+      <ComboBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding XPath=@name}" />
+        </DataTemplate>
+      </ComboBox.ItemTemplate>
+    </ComboBox>
+  </DockPanel>
+  <!-- ORDERS -->
+  <DockPanel Grid.Row="1">
+    <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Orders" />
+    <ListBox x:Name="orderSelector" DataContext="{Binding Path=CurrentItem}" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding XPath=order}" >
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding XPath=@desc}" />
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </DockPanel>
+  <!-- ORDER DETAILS -->
+  <DockPanel Grid.Row="2">
+    <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Order Details" />
+    <ItemsControl DataContext= "{Binding ElementName=orderSelector, Path=SelectedItem}" ItemsSource="{Binding XPath=orderDetail}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <TextBlock>
+            <Run>Product:</Run>
+            <TextBlock Text="{Binding XPath=@product}" />
+            <Run>(</Run>
+            <TextBlock Text="{Binding XPath=@quantity}" />
+            <Run>)</Run>
+          </TextBlock>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </DockPanel>
+</Grid>
